@@ -11,7 +11,11 @@ import { QuizService } from '../../../services/quiz.service';
 })
 export class EditQuizComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private quizService: QuizService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
   }
