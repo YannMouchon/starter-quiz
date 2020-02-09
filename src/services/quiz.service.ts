@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -48,6 +48,9 @@ export class QuizService {
      this.quizzes$.next(this.quizzes);
      console.log(Object.values(quizzesObj));
    });
+  }
 
+  getQuiz(id: string): Observable<Quiz> {
+    return of(this.quizzes.find(quiz => quiz.id === id));
   }
 }
