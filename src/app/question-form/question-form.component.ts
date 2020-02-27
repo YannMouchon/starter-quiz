@@ -16,13 +16,25 @@ export class QuestionFormComponent implements OnInit {
 
   private initializeQuestionForm() {
     this.questionForm = this.formBuilder.group({
-      label: [''],
+      name: [''],
       answers: this.formBuilder.array([])
     });
   }
 
   get answers() {
     return this.questionForm.get('answers') as FormArray;
+  }
+
+  private createAnswer() {
+    return this.formBuilder.group({
+      value: '',
+      isCorrect: false,
+    });
+  }
+
+  addAnswer() {
+    console.log("Answer added");
+    this.answers.push(this.createAnswer());
   }
 
   ngOnInit() {

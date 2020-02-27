@@ -4,11 +4,23 @@
         <label for="Title">
             Title 
             <br>
-            <input class="input-custom" type="text" id="name" [formControl]="'name'">
+            <input class="input-custom" type="text" id="name" [formControl]="name">
         </label>
         <br>
-        <button type="submit" class="button-card" >Add answer</button>
-        <br>
+        <button type="submit" class="button-card" (click)="addAnswer()">Add answer</button>
+        <div class="answer" formArrayName="answers">
+            <div *ngFor="let address of answers.controls; let i = index">
+                <div class="answer-form" [formGroupName]="i">
+                    <label>
+                        Answer
+                        <input type="text" [formControlName]="'value'">
+                        <br>
+                        Correct
+                        <input type="checkbox" [formControlName]="'isCorrect'">
+                    </label>
+                </div>
+            </div>
+        </div>
         <button type="submit" class="button-card" >Create</button>
     </form>
 </div>
