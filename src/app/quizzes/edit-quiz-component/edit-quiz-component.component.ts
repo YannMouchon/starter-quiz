@@ -16,8 +16,7 @@ export class EditQuizComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private quizService: QuizService,
-    private location: Location
+    private quizService: QuizService
   ) { }
 
   ngOnInit() {

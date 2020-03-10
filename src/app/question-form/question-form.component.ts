@@ -33,7 +33,7 @@ export class QuestionFormComponent implements OnInit {
   }
 
   addAnswer() {
-    console.log("Answer added");
+    console.log('Answer added');
     this.answers.push(this.createAnswer());
   }
 

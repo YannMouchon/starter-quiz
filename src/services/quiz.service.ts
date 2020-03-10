@@ -53,4 +53,8 @@ export class QuizService {
   getQuiz(id: string): Observable<Quiz> {
     return of(this.quizzes.find(quiz => quiz.id === id));
   }
+
+  getQuizzes() {
+    return this.quizzes;
+  }
 }
