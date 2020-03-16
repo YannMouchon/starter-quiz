@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app.routing.module';
 import { QuestionComponent } from './question/question.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { QuestionFormComponent } from './question-form/question-form.component';
+import { QuizService } from 'src/services/quiz.service';
+import { QuestionService } from 'src/services/question.service';
 
 
 
@@ -34,7 +36,10 @@ import { QuestionFormComponent } from './question-form/question-form.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    QuizService,
+    QuestionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

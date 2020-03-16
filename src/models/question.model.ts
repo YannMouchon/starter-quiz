@@ -1,10 +1,12 @@
-export interface Answer {
-    type?: string;
-    value: string;
-    isCorrect: boolean;
+export class Answer {
+    constructor(value: string,
+                isCorrect: boolean) {}
+
 }
 
-export interface Question {
-    label: string;
-    answers: Answer[];
+export class Question {
+    constructor(label: string,
+                answers?: Answer[]
+                ) {}
+
 }
